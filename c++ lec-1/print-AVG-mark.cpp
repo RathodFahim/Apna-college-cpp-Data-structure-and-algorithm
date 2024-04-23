@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-   int main() {
+int main()
+{
     int maths, english, sci;
 
     cout << "Enter the marks of maths: ";
@@ -15,7 +16,7 @@ using namespace std;
 
     int avg = (maths + english + sci) / 3;
 
-    cout<<"Average marks of maths, english and sci = " <<avg;
+    cout << "Average marks of maths, english and sci = " << avg;
 
     return 0;
-   }
+}
