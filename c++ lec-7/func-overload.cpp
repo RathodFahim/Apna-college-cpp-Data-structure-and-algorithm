@@ -24,8 +24,12 @@ double sum(double a, double b, double c) {
 }
 
 int main() {
-    sum(2, 3);
-    sum(2.4, 3.5);
-    sum(2, 3, 4);
-    sum(2.4, 3.5, 4.6);
+    //sum(2, 3);
+    //sum(2.4, 3.5);
+    //sum(2, 3, 4);
+    //sum(2.4, 3.5, 4.6);
+    
+    int a, b;
+    cout << "Enter Two Numbers: ";
+    cin >> a >> b;
 }
