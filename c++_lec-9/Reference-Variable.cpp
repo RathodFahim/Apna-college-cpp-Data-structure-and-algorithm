@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-void changeA(int &a) {
-    a = 23;
-    cout << a << "\n";
+void changeA(int &b) {
+    b = 23;
+    cout << b << "\n";
 }
 
 int main() {
