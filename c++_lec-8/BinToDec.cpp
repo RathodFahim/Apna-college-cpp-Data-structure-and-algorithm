@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Binary to Decimal Conversion
 void BinToDec(int binNum) {
     int n = binNum;
     int decNum = 0;
