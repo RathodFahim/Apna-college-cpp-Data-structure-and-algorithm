@@ -6,7 +6,7 @@ int main() {
     int n = sizeof(arr) / sizeof(int);
 
     // output of array
-    for(int i=0; i<=n; i++) {
+    for(int i=0; i<n; i++) {
         cout << arr[i] << " ";
     }
     cout << endl;
