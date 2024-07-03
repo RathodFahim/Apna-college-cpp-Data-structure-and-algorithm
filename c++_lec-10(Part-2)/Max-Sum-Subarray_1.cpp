@@ -2,7 +2,7 @@
 using namespace std;
 
 void maxSumSubArray(int *arr, int n) {
-    int maxsum;
+    int maxsum = INT32_MIN;
     for(int start=0; start<n; start++) {
         for(int end=start; end<n; end++) {
             int currSum = 0;
