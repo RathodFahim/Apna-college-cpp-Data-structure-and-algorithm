@@ -14,6 +14,7 @@ void maxSumSubArray(int *arr, int n) {
         }
         cout << endl;
     }
+    cout << "Max sum subarray is " << maxsum << endl;
 }
 
 int main() {
