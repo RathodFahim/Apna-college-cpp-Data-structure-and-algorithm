@@ -16,7 +16,5 @@ void toUpper(char word[], int n) {
 int main() {
     char word[] = "ApPle";
     toUpper(word, strlen(word));
-    cout << word << endl;
-
-    
+    cout << word << endl;  
 }
