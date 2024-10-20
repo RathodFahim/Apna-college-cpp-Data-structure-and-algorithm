@@ -17,4 +17,6 @@ int main() {
     char word[] = "ApPle";
     toUpper(word, strlen(word));
     cout << word << endl;
+
+    
 }
