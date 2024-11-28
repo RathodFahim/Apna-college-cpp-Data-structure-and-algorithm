@@ -2,6 +2,7 @@
 #include <string.h>
 using namespace std;
 
+// palindrome is a word that reads the same backward as forward
 bool isPalindrome(char word[], int n) {
    int st = 0, end = n-1;
    while(st < end) {
