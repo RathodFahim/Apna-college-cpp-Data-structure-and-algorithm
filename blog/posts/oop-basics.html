@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Oriented Programming Basics - Apna College Blog</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .post-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            color: #333;
+        }
+        
+        .highlight {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-back:hover {
+            color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🏗️ Object-Oriented Programming</h1>
+            <p>Building robust programs with classes and objects</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="../index.html" class="nav-back">← Back to Blog</a>
+        
+        <article class="post-content">
+            <h2>Introduction to Object-Oriented Programming in C++</h2>
+            <p>Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects and classes. It helps create more organized, reusable, and maintainable code. Let's explore the fundamental concepts with practical examples!</p>
+
+            <h3>The Student Class Example</h3>
+            <p>Let's start with a simple Student class that demonstrates basic OOP concepts:</p>
+
+            <div class="code-block">
+                <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Student {
+    string name;
+    float cgpa;
+public:
+    // Constructor
+    Student(string n, float c) {
+        name = n;
+        cgpa = c;
+    }
+
+    void getPercentage() {
+        cout &lt;&lt; "Percentage is: " &lt;&lt; cgpa * 10 &lt;&lt; "%" &lt;&lt; endl;
+    }
+
+    // Getters
+    string getName() {
+        return name;
+    }
+    
+    float getCgpa() {
+        return cgpa;
+    }
+};</code></pre>
+            </div>
+
+            <h3>Understanding the Class Structure</h3>
+
+            <h4>1. Private Data Members</h4>
+            <div class="code-block">
+                <pre><code>class Student {
+    string name;    // Private by default
+    float cgpa;     // Private by default</code></pre>
+            </div>
+            <p>These are the attributes that define what a Student object contains. They're private, meaning they can only be accessed from within the class itself.</p>
+
+            <h4>2. Public Section</h4>
+            <div class="code-block">
+                <pre><code>public:
+    // Constructor and methods go here</code></pre>
+            </div>
+            <p>The public section contains methods that can be called from outside the class.</p>
+
+            <h4>3. Constructor</h4>
+            <div class="code-block">
+                <pre><code>Student(string n, float c) {
+    name = n;
+    cgpa = c;
+}</code></pre>
+            </div>
+            <p>A constructor is a special method that runs automatically when an object is created. It initializes the object's data.</p>
+
+            <h4>4. Methods (Member Functions)</h4>
+            <div class="code-block">
+                <pre><code>void getPercentage() {
+    cout &lt;&lt; "Percentage is: " &lt;&lt; cgpa * 10 &lt;&lt; "%" &lt;&lt; endl;
+}</code></pre>
+            </div>
+            <p>Methods define what actions the object can perform.</p>
+
+            <h3>Advanced Example: The Car Class</h3>
+            <p>Let's look at a more complex example that demonstrates constructors, destructors, and dynamic memory:</p>
+
+            <div class="code-block">
+                <pre><code>class Car {
+public:
+    string name;
+    string color;
+    int *mileage;
+
+    // Constructor
+    Car(string name, string color) {
+        this-&gt;name = name;
+        this-&gt;color = color;
+        mileage = new int; // Dynamic Allocation
+        *mileage = 12;
+    }
+
+    // Copy Constructor
+    Car(Car &original) {
+        cout &lt;&lt; "copying original to new..\n";
+        name = original.name;
+        color = original.color;
+        mileage = new int;
+        *mileage = *original.mileage;
+    }
+
+    // Destructor
+    ~Car() {
+        cout &lt;&lt; "deleting object..\n";
+        if (mileage != NULL) {
+            delete mileage;
+            mileage = NULL;
+        }
+    }
+};</code></pre>
+            </div>
+
+            <h3>Key OOP Concepts Explained</h3>
+
+            <h4>1. Dynamic Memory Allocation</h4>
+            <div class="code-block">
+                <pre><code>mileage = new int; // Allocate memory
+*mileage = 12;     // Set value</code></pre>
+            </div>
+            <p>The <code>new</code> keyword allocates memory on the heap. This is useful for data that needs to persist or when the size isn't known at compile time.</p>
+
+            <h4>2. The 'this' Pointer</h4>
+            <div class="code-block">
+                <pre><code>this-&gt;name = name;</code></pre>
+            </div>
+            <p>The <code>this</code> pointer refers to the current object. It's useful when parameter names match member variable names.</p>
+
+            <h4>3. Copy Constructor</h4>
+            <div class="code-block">
+                <pre><code>Car(Car &original) {
+    // Create a deep copy
+    mileage = new int;
+    *mileage = *original.mileage;
+}</code></pre>
+            </div>
+            <p>A copy constructor creates a new object as a copy of an existing object. It's crucial for proper memory management.</p>
+
+            <h4>4. Destructor</h4>
+            <div class="code-block">
+                <pre><code>~Car() {
+    cout &lt;&lt; "deleting object..\n";
+    if (mileage != NULL) {
+        delete mileage;
+        mileage = NULL;
+    }
+}</code></pre>
+            </div>
+            <p>A destructor is called automatically when an object is destroyed. It's essential for cleaning up dynamically allocated memory.</p>
+
+            <h3>Using the Classes</h3>
+            <div class="code-block">
+                <pre><code>int main() {
+    // Creating a Student object
+    Student s1("John Doe", 8.5);
+    s1.getPercentage();
+    cout &lt;&lt; "Name: " &lt;&lt; s1.getName() &lt;&lt; endl;
+    
+    // Creating a Car object
+    Car c1("Maruti 800", "white");
+    cout &lt;&lt; c1.name &lt;&lt; endl;
+    cout &lt;&lt; *c1.mileage &lt;&lt; endl;
+    
+    return 0;
+}</code></pre>
+            </div>
+
+            <div class="highlight">
+                <h4>💡 Key Benefits of OOP</h4>
+                <ul>
+                    <li><strong>Encapsulation:</strong> Data and methods are bundled together</li>
+                    <li><strong>Data Hiding:</strong> Private members protect internal data</li>
+                    <li><strong>Reusability:</strong> Classes can be reused in different parts of the program</li>
+                    <li><strong>Modularity:</strong> Code is organized into logical units</li>
+                </ul>
+            </div>
+
+            <h3>Best Practices</h3>
+            <ol>
+                <li><strong>Always initialize data members</strong> in the constructor</li>
+                <li><strong>Use getters and setters</strong> to access private data</li>
+                <li><strong>Implement destructors</strong> when using dynamic memory</li>
+                <li><strong>Consider copy constructors</strong> for classes with pointers</li>
+                <li><strong>Follow naming conventions</strong> for better readability</li>
+            </ol>
+
+            <h3>What's Next?</h3>
+            <p>Now that you understand basic OOP concepts, explore:</p>
+            <ul>
+                <li>Inheritance and derived classes</li>
+                <li>Polymorphism and virtual functions</li>
+                <li>Operator overloading</li>
+                <li>Abstract classes and interfaces</li>
+                <li>RAII (Resource Acquisition Is Initialization)</li>
+            </ul>
+
+            <p>Object-Oriented Programming is a powerful paradigm that will help you write better, more maintainable code. Practice creating your own classes and objects!</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Apna College C++ Learning Blog. Happy Coding! 💻</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

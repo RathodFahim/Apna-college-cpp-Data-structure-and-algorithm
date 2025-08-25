@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with C++ - Apna College Blog</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .post-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            color: #333;
+        }
+        
+        .highlight {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-back:hover {
+            color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚀 Getting Started with C++</h1>
+            <p>Your first step into the world of C++ programming</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="../index.html" class="nav-back">← Back to Blog</a>
+        
+        <article class="post-content">
+            <h2>Welcome to C++ Programming!</h2>
+            <p>C++ is one of the most powerful and widely-used programming languages in the world. It's the foundation for system programming, game development, and many high-performance applications. Let's start with your very first C++ program!</p>
+
+            <h3>Your First C++ Program</h3>
+            <p>Every C++ journey begins with the famous "Hello World" program. Here's the code from our lesson:</p>
+
+            <div class="code-block">
+                <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "First C++ code\n" &lt;&lt; "Also boilerplat code for C++\n";
+    return 0;
+}</code></pre>
+            </div>
+
+            <h3>Understanding the Code</h3>
+            <p>Let's break down each part of this simple program:</p>
+            
+            <h4>1. The #include directive</h4>
+            <div class="code-block">
+                <pre><code>#include &lt;iostream&gt;</code></pre>
+            </div>
+            <p>This line tells the compiler to include the iostream library, which provides input and output functionality. The "iostream" stands for "input-output stream".</p>
+
+            <h4>2. Using namespace std</h4>
+            <div class="code-block">
+                <pre><code>using namespace std;</code></pre>
+            </div>
+            <p>This line allows us to use standard library features (like cout) without having to prefix them with "std::". It's a convenience that makes our code cleaner.</p>
+
+            <h4>3. The main function</h4>
+            <div class="code-block">
+                <pre><code>int main() {
+    // Your code goes here
+    return 0;
+}</code></pre>
+            </div>
+            <p>The main() function is the entry point of every C++ program. When you run your program, execution starts here. The "int" means it returns an integer value (0 typically means success).</p>
+
+            <h4>4. Output with cout</h4>
+            <div class="code-block">
+                <pre><code>cout &lt;&lt; "First C++ code\n" &lt;&lt; "Also boilerplat code for C++\n";</code></pre>
+            </div>
+            <p>cout (pronounced "see-out") is used to display output to the console. The << operator sends the text to the output stream. The \n creates a new line.</p>
+
+            <div class="highlight">
+                <h4>💡 Key Takeaway</h4>
+                <p>This simple program demonstrates the basic structure that every C++ program follows: includes, namespace declaration, main function, and output. This is your "boilerplate" code that you'll use as a starting point for all your C++ programs!</p>
+            </div>
+
+            <h3>What's Next?</h3>
+            <p>Now that you've written your first C++ program, you're ready to explore:</p>
+            <ul>
+                <li>Variables and data types</li>
+                <li>User input with cin</li>
+                <li>Basic calculations and operations</li>
+                <li>Control structures like if-else statements</li>
+            </ul>
+
+            <p>Keep practicing and experimenting with this basic structure. Try changing the text inside the cout statements and see what happens!</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Apna College C++ Learning Blog. Happy Coding! 💻</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

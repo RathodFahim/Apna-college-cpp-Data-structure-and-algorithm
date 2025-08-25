@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Structures: If-Else - Apna College Blog</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .post-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            color: #333;
+        }
+        
+        .highlight {
+            background: #e7f3ff;
+            padding: 1rem;
+            border-left: 4px solid #667eea;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-back:hover {
+            color: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎯 Control Structures: If-Else</h1>
+            <p>Making decisions in your C++ programs</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="../index.html" class="nav-back">← Back to Blog</a>
+        
+        <article class="post-content">
+            <h2>Decision Making with If-Else Statements</h2>
+            <p>Programming becomes truly powerful when your code can make decisions based on different conditions. The if-else statement is one of the fundamental control structures that allows your program to choose different paths of execution.</p>
+
+            <h3>Real-World Example: Voting Eligibility Checker</h3>
+            <p>Let's look at a practical example that checks voting eligibility and election candidacy based on age:</p>
+
+            <div class="code-block">
+                <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int age;
+    cout &lt;&lt; "Enter your age: ";
+    cin &gt;&gt; age;
+
+    if (age &gt;= 18) {
+        cout &lt;&lt; "You can vote!" &lt;&lt; endl;
+    }
+    if (age &gt;= 45) {
+        cout &lt;&lt; "You are eligible for elections" &lt;&lt; endl;
+    }
+    
+    return 0;
+}</code></pre>
+            </div>
+
+            <h3>Understanding the Code</h3>
+            
+            <h4>1. User Input</h4>
+            <div class="code-block">
+                <pre><code>int age;
+cout &lt;&lt; "Enter your age: ";
+cin &gt;&gt; age;</code></pre>
+            </div>
+            <p>First, we declare an integer variable to store the user's age, prompt them to enter it, and read the input using <code>cin</code>.</p>
+
+            <h4>2. Basic If Statement</h4>
+            <div class="code-block">
+                <pre><code>if (age &gt;= 18) {
+    cout &lt;&lt; "You can vote!" &lt;&lt; endl;
+}</code></pre>
+            </div>
+            <p>This checks if the age is greater than or equal to 18. If true, it executes the code inside the curly braces.</p>
+
+            <h4>3. Multiple If Statements</h4>
+            <div class="code-block">
+                <pre><code>if (age &gt;= 45) {
+    cout &lt;&lt; "You are eligible for elections" &lt;&lt; endl;
+}</code></pre>
+            </div>
+            <p>This is a separate condition that checks for election eligibility. Notice how both conditions can be true simultaneously!</p>
+
+            <div class="highlight">
+                <h4>💡 Key Concept: Multiple Independent Conditions</h4>
+                <p>In this example, we use two separate if statements rather than if-else. This means both conditions are checked independently. A 50-year-old person would see both messages: they can vote AND they're eligible for elections.</p>
+            </div>
+
+            <h3>Alternative: If-Else Structure</h3>
+            <p>The commented code in the original example shows an if-else structure:</p>
+
+            <div class="code-block">
+                <pre><code>// Alternative approach:
+if (age &gt;= 18) {
+    cout &lt;&lt; "You can vote!" &lt;&lt; endl;
+} else {
+    cout &lt;&lt; "You can't vote!" &lt;&lt; endl;
+}</code></pre>
+            </div>
+            <p>This version provides feedback for both cases - when someone can vote and when they cannot.</p>
+
+            <h3>Comparison Operators</h3>
+            <p>C++ provides several comparison operators for conditions:</p>
+            <ul>
+                <li><code>==</code> - Equal to</li>
+                <li><code>!=</code> - Not equal to</li>
+                <li><code>&gt;</code> - Greater than</li>
+                <li><code>&lt;</code> - Less than</li>
+                <li><code>&gt;=</code> - Greater than or equal to</li>
+                <li><code>&lt;=</code> - Less than or equal to</li>
+            </ul>
+
+            <div class="warning">
+                <h4>⚠️ Common Mistake</h4>
+                <p>Notice there's a small typo in the original code: "electioms" instead of "elections". When coding, always double-check your output strings for spelling errors!</p>
+            </div>
+
+            <h3>Practical Exercises</h3>
+            <p>Try modifying the code to:</p>
+            <ol>
+                <li>Add a condition for senior citizen benefits (age >= 60)</li>
+                <li>Create an if-else-if chain for different age categories</li>
+                <li>Add input validation to ensure age is positive</li>
+                <li>Check for driving eligibility (age >= 16 in many places)</li>
+            </ol>
+
+            <h3>What's Next?</h3>
+            <p>Now that you understand basic conditional statements, you can explore:</p>
+            <ul>
+                <li>Logical operators (&&, ||, !)</li>
+                <li>Nested if statements</li>
+                <li>Switch statements</li>
+                <li>Loops and iteration</li>
+            </ul>
+
+            <p>Conditional statements are the foundation of program logic. Master them, and you'll be able to create programs that respond intelligently to user input and different scenarios!</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Apna College C++ Learning Blog. Happy Coding! 💻</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
