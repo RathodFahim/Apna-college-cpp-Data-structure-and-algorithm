@@ -39,3 +39,28 @@ int main() {
 
     return 0;
 }
+// This code demonstrates shallow vs deep copy concepts in C++ using a Car class
+
+// Car class definition with string and pointer members
+// - name: stores car name as string
+// - color: stores car color as string 
+// - mileage: pointer to int storing mileage value
+
+// Constructor takes name and color parameters
+// - Initializes name and color member variables
+// - Dynamically allocates memory for mileage pointer
+// - Sets initial mileage value to 12
+
+// Copy constructor performs deep copy:
+// - Takes reference to original Car object
+// - Copies name and color values
+// - Creates new memory allocation for mileage
+// - Copies value pointed to by original mileage
+
+// Main function demonstrates:
+// 1. Creates c1 car object
+// 2. Creates c2 as copy of c1 using copy constructor
+// 3. Modifies c2's mileage to show objects are independent
+// 4. Prints mileage of both cars to show deep copy worked:
+//    - c1 mileage stays 12
+//    - c2 mileage changes to 10
